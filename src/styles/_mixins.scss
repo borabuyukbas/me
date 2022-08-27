@@ -1,0 +1,14 @@
+@mixin hoverable {
+    color: var(--app-inactive-font-color);
+
+    &:hover {
+        background-color: var(--app-action-color);
+    }
+}
+
+@mixin activateable {
+    &.active {
+        color: var(--app-font-color);
+        background-color: var(--app-active-color);
+    }
+}
