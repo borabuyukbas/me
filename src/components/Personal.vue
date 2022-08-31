@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import { Icon } from "@iconify/vue/dist/offline";
+
 import Instagram from "@iconify/icons-ion/logo-instagram";
+import Github from "@iconify/icons-ion/logo-github";
+import Gitlab from "@iconify/icons-ion/logo-gitlab";
+import Linkedin from "@iconify/icons-ion/logo-linkedin";
 </script>
 
 <template>
@@ -11,7 +15,7 @@ import Instagram from "@iconify/icons-ion/logo-instagram";
             <p class="about">Short about text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sed
                 euismod leo.</p>
             <div class="socials">
-                <Icon :icon="Instagram" />
+                <Icon v-for="social in [Instagram, Github, Gitlab, Linkedin]" :icon="social" />
             </div>
         </div>
         <div class="personal-right">
@@ -55,6 +59,12 @@ import Instagram from "@iconify/icons-ion/logo-instagram";
 .socials {
     svg {
         font-size: 1.5rem;
+        margin-right: 0.5rem;
+        color: var(--app-inactive-font-color);
+
+        &:hover {
+            color: var(--app-font-color);
+        }
     }
 }
 

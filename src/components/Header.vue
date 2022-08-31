@@ -85,8 +85,8 @@ nav {
   align-items: center;
 
   a {
-    @include hoverable;
     @include activateable;
+    @include hoverable;
 
     display: flex;
     align-items: center;
