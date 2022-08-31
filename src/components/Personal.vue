@@ -5,17 +5,18 @@ import Instagram from "@iconify/icons-ion/logo-instagram";
 import Github from "@iconify/icons-ion/logo-github";
 import Gitlab from "@iconify/icons-ion/logo-gitlab";
 import Linkedin from "@iconify/icons-ion/logo-linkedin";
+import Mail from "@iconify/icons-ion/mail";
 </script>
 
 <template>
     <div class="card">
         <div class="personal-left">
             <h1 class="title">Bora Büyükbaş</h1>
-            <h2 class="subtitle">Developer</h2>
+            <h2 class="subtitle">{{ $t("subtitle") }}</h2>
             <p class="about">Short about text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sed
                 euismod leo.</p>
             <div class="socials">
-                <Icon v-for="social in [Instagram, Github, Gitlab, Linkedin]" :icon="social" />
+                <Icon v-for="social in [Instagram, Github, Gitlab, Linkedin, Mail]" :icon="social" />
             </div>
         </div>
         <div class="personal-right">
@@ -53,12 +54,12 @@ import Linkedin from "@iconify/icons-ion/logo-linkedin";
 }
 
 .about {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
 }
 
 .socials {
     svg {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
         margin-right: 0.5rem;
         color: var(--app-inactive-font-color);
 

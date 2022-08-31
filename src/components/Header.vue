@@ -1,13 +1,10 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { Icon } from "@iconify/vue/dist/offline";
+import { locales } from "../i18n";
 
 import Sunny from "@iconify/icons-ion/sunny-outline";
 import Moon from "@iconify/icons-ion/moon-outline";
-
-import TR from "@iconify/icons-twemoji/flag-turkey";
-import EN from "@iconify/icons-twemoji/flag-united-kingdom";
-import DE from "@iconify/icons-twemoji/flag-germany";
 
 const isDarkThemeEnabled = ref(
   window.matchMedia("(prefers-color-scheme: dark)").matches
@@ -32,21 +29,12 @@ function toggleDarkTheme() {
       </div>
       <div class="nav-right">
         <a
-          class="active"
-          href="#"
+          :class="{ active: $i18n.locale === locale.name }"
+          @click="$i18n.locale = locale.name"
+          v-for="locale of locales"
         >
           <Icon
-            :icon="TR"
-          />
-        </a>
-        <a href="#">
-          <Icon
-            :icon="EN"
-          />
-        </a>
-        <a href="#">
-          <Icon
-            :icon="DE"
+            :icon="locale.icon"
           />
         </a>
         <button
@@ -88,6 +76,7 @@ nav {
     @include activateable;
     @include hoverable;
 
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
