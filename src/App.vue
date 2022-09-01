@@ -1,12 +1,14 @@
 <script setup lang="ts">
 import Header from "./components/Header.vue";
 import Personal from "./components/Personal.vue";
+import About from "./components/About.vue";
 </script>
 
 <template>
   <div class="container">
     <Header />
     <Personal />
+    <About />
   </div>
 </template>
 
@@ -21,5 +23,6 @@ import Personal from "./components/Personal.vue";
 
 .card {
   display: flex;
+  margin-bottom: 4rem;
 }
 </style>

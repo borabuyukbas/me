@@ -1,6 +1,11 @@
 @import 'mixins';
 @import 'themes';
 
+
+body, button, a, p {
+    @include transition;
+}
+
 body {
     background: var(--app-background-color);
     color: var(--app-font-color);

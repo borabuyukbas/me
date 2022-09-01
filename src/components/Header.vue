@@ -29,9 +29,10 @@ function toggleDarkTheme() {
       </div>
       <div class="nav-right">
         <a
+          v-for="locale of locales"
+          :key="'localeButton_' + locale"
           :class="{ active: $i18n.locale === locale.name }"
           @click="$i18n.locale = locale.name"
-          v-for="locale of locales"
         >
           <Icon
             :icon="locale.icon"

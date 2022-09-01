@@ -1,3 +1,8 @@
 {
-    "subtitle": "Softwareentwickler"
+    "subtitle": "Softwareentwickler",
+    "about_title": "Über mich",
+    "skills_title": "Fähigkeiten",
+
+    "short_about_text": "",
+    "about_text": ""
 }

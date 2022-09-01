@@ -6,23 +6,44 @@ import Github from "@iconify/icons-ion/logo-github";
 import Gitlab from "@iconify/icons-ion/logo-gitlab";
 import Linkedin from "@iconify/icons-ion/logo-linkedin";
 import Mail from "@iconify/icons-ion/mail";
+
+const socials = [
+    { icon: Instagram, link: "" },
+    { icon: Github, link: "" },
+    { icon: Gitlab, link: "" },
+    { icon: Linkedin, link: "" },
+    { icon: Mail, link: "" },
+]
 </script>
 
 <template>
-    <div class="card">
-        <div class="personal-left">
-            <h1 class="title">Bora Büyükbaş</h1>
-            <h2 class="subtitle">{{ $t("subtitle") }}</h2>
-            <p class="about">Short about text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sed
-                euismod leo.</p>
-            <div class="socials">
-                <Icon v-for="social in [Instagram, Github, Gitlab, Linkedin, Mail]" :icon="social" />
-            </div>
-        </div>
-        <div class="personal-right">
-            <div class="avatar"></div>
-        </div>
+  <div class="card">
+    <div class="personal-left">
+      <h1 class="title">
+        Bora Büyükbaş
+      </h1>
+      <h2 class="subtitle">
+        {{ $t("subtitle") }}
+      </h2>
+      <p class="about">
+        {{ $t("short_about_text") }}
+      </p>
+      <div class="socials">
+        <a
+          v-for="(social, i) of socials"
+          :key="'Psocial_' + i"
+          :href="social.link"
+        >
+          <Icon
+            :icon="social.icon"
+          />
+        </a>
+      </div>
     </div>
+    <div class="personal-right">
+      <div class="avatar" />
+    </div>
+  </div>
 </template>
 
 <style lang="scss" scoped>
@@ -59,6 +80,8 @@ import Mail from "@iconify/icons-ion/mail";
 
 .socials {
     svg {
+        @include transition;
+
         font-size: 1.25rem;
         margin-right: 0.5rem;
         color: var(--app-inactive-font-color);

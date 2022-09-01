@@ -12,7 +12,7 @@ export const locales = [
 ]
 
 export const i18n =  createI18n({
-    locale: "tr",
+    locale: navigator.language.split("-")[0],
     fallbackLocale: "en",
     messages
 });
