@@ -1,7 +1,16 @@
 <script setup lang="ts">
-import Header from "./components/Header.vue";
-import Personal from "./components/Personal.vue";
-import About from "./components/About.vue";
+import Header from "./sections/Header.vue";
+import Personal from "./sections/Personal.vue";
+import About from "./sections/About.vue";
+
+import { ref, watch } from "vue";
+import { i18n } from "./i18n";
+
+const locale = ref(i18n.global.locale);
+
+watch(locale, () => {
+  document.documentElement.setAttribute('lang', locale.value)
+})
 </script>
 
 <template>

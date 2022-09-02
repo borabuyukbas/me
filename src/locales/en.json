@@ -2,6 +2,10 @@
     "subtitle": "Software Developer",
     "about_title": "About",
     "skills_title": "Skills",
+    "programming_title": "Programming",
+    "language_title": "Language",
+
+    "native": "native",
 
     "short_about_text": "",
     "about_text": ""

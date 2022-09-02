@@ -8,11 +8,11 @@ import Linkedin from "@iconify/icons-ion/logo-linkedin";
 import Mail from "@iconify/icons-ion/mail";
 
 const socials = [
-    { icon: Instagram, link: "" },
-    { icon: Github, link: "" },
-    { icon: Gitlab, link: "" },
-    { icon: Linkedin, link: "" },
-    { icon: Mail, link: "" },
+  { icon: Github, link: "https://github.com/borabuyukbas" },
+  { icon: Gitlab, link: "https://gitlab.com/borabuyukbas" },
+  { icon: Instagram, link: "https://instagram.com/borabbs" },
+  { icon: Linkedin, link: "" },
+  { icon: Mail, link: "" },
 ]
 </script>
 
@@ -33,6 +33,7 @@ const socials = [
           v-for="(social, i) of socials"
           :key="'Psocial_' + i"
           :href="social.link"
+          target="_blank"
         >
           <Icon
             :icon="social.icon"

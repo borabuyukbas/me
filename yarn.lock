@@ -55,6 +55,13 @@
   dependencies:
     "@iconify/types" "*"
 
+"@iconify/icons-vscode-icons@^1.2.13":
+  version "1.2.13"
+  resolved "https://registry.yarnpkg.com/@iconify/icons-vscode-icons/-/icons-vscode-icons-1.2.13.tgz#135d5fe7eddd98f00fc0e7e76fadaf17c28b7634"
+  integrity sha512-2/4TzDmZNOC8pneRfhQjXVzDWACiIcxbUiKNie1ExiC0bpcRDipfs1gTPD/A3IRQZXo2/zvwMBl8eC7Pxhuqeg==
+  dependencies:
+    "@iconify/types" "*"
+
 "@iconify/types@*":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@iconify/types/-/types-1.1.0.tgz#dc15fc988b1b3fd558dd140a24ede7e0aac11280"

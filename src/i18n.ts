@@ -1,5 +1,7 @@
 import { createI18n } from 'vue-i18n';
-import messages from '@intlify/vite-plugin-vue-i18n/messages'
+import messages from '@intlify/vite-plugin-vue-i18n/messages';
+import en from './locales/en.json';
+type MessageSchema = typeof en;
 
 import TR from "@iconify/icons-twemoji/flag-turkey";
 import EN from "@iconify/icons-twemoji/flag-united-kingdom";
@@ -11,8 +13,9 @@ export const locales = [
     { name: "de", icon: DE },
 ]
 
-export const i18n =  createI18n({
+export const i18n =  createI18n<[MessageSchema], 'tr' | 'en' | 'de'>({
     locale: navigator.language.split("-")[0],
     fallbackLocale: "en",
-    messages
+    messages,
+    legacy: false
 });

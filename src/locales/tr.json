@@ -2,6 +2,10 @@
     "subtitle": "Yazılım Geliştiricisi",
     "about_title": "Hakkımda",
     "skills_title": "Yetenekler",
+    "programming_title": "Yazılım",
+    "language_title": "Dil",
+
+    "native": "ana dil",
 
     "short_about_text": "",
     "about_text": ""

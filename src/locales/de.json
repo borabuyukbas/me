@@ -2,6 +2,10 @@
     "subtitle": "Softwareentwickler",
     "about_title": "Über mich",
     "skills_title": "Fähigkeiten",
+    "programming_title": "Programmierung",
+    "language_title": "Sprach",
+
+    "native": "Muttersprache",
 
     "short_about_text": "",
     "about_text": ""

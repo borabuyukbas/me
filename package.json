@@ -12,6 +12,7 @@
   "dependencies": {
     "@iconify/icons-ion": "^1.2.3",
     "@iconify/icons-twemoji": "^1.2.5",
+    "@iconify/icons-vscode-icons": "^1.2.13",
     "vue": "^3.2.25",
     "vue-i18n": "9"
   },
