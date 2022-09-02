@@ -9,14 +9,19 @@ import Moon from "@iconify/icons-ion/moon-outline";
 const isDarkThemeEnabled = ref(
   window.matchMedia("(prefers-color-scheme: dark)").matches
 );
-if (isDarkThemeEnabled.value)
+
+if (isDarkThemeEnabled.value) {
   document.documentElement.setAttribute("theme", "dark");
+  document.querySelector('link[rel="icon"]')!.setAttribute('href', 'favicon-light.png');
+}
 
 function toggleDarkTheme() {
   document.documentElement.setAttribute(
     "theme",
     isDarkThemeEnabled.value ? "light" : "dark"
   );
+  document.querySelector('link[rel="icon"]')!.setAttribute('href', isDarkThemeEnabled.value ? 'favicon-dark.png' : 'favicon-light.png');
+
   isDarkThemeEnabled.value = !isDarkThemeEnabled.value;
 }
 </script>

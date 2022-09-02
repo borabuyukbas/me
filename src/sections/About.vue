@@ -40,7 +40,7 @@ const language_skills = [
         {{ $t("about_title") }}
       </h3>
       <div class="section-content">
-        <p>{{ $t("about_text") }}</p>
+        <pre><p>{{ $t("about_text") }}</p></pre>
       </div>
     </div>
     <div class="right-section">
