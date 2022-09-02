@@ -2,6 +2,7 @@
 import Header from "./sections/Header.vue";
 import Personal from "./sections/Personal.vue";
 import About from "./sections/About.vue";
+import Footer from "./sections/Footer.vue";
 
 import { ref, watch } from "vue";
 import { i18n } from "./i18n";
@@ -18,6 +19,7 @@ watch(locale, () => {
     <Header />
     <Personal />
     <About />
+    <Footer />
   </div>
 </template>
 

@@ -11,8 +11,8 @@ const socials = [
   { icon: Github, link: "https://github.com/borabuyukbas" },
   { icon: Gitlab, link: "https://gitlab.com/borabuyukbas" },
   { icon: Instagram, link: "https://instagram.com/borabbs" },
-  { icon: Linkedin, link: "" },
-  { icon: Mail, link: "" },
+  { icon: Linkedin, link: "https://www.linkedin.com/in/borabuyukbas" },
+  { icon: Mail, link: "mailto:borabykbs@gmail.com" },
 ]
 </script>
 

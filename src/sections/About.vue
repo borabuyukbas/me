@@ -38,7 +38,6 @@ const language_skills = [
     <div class="left-section">
       <h3 class="section-header">
         {{ $t("about_title") }}
-        {{ $t("") }}
       </h3>
       <div class="section-content">
         <p>{{ $t("about_text") }}</p>
@@ -51,7 +50,10 @@ const language_skills = [
       <div class="section-content">
         <div class="skill-group">
           <div class="skill-group-title">
-            <Icon class="icon" :icon="Programming" />
+            <Icon
+              class="icon"
+              :icon="Programming"
+            />
             <h6>{{ $t("programming_title") }}</h6>
           </div>
           <SkillBox 
@@ -64,7 +66,10 @@ const language_skills = [
         </div>
         <div class="skill-group">
           <div class="skill-group-title">
-            <Icon class="icon" :icon="Language" />
+            <Icon
+              class="icon"
+              :icon="Language"
+            />
             <h6>{{ $t("language_title") }}</h6>
           </div>
           <SkillBox 
@@ -130,9 +135,11 @@ const language_skills = [
 
 .skill-group-title {
   display: flex;
-  justify-content: center;
+  justify-content: left;
+  padding-left: 0.5rem;
   align-items: center;
   line-height: 1.5rem;
+  color: var(--app-inactive-font-color);
 
   .icon {
     font-size: 1.25rem;
