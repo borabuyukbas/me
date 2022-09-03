@@ -26,7 +26,7 @@ const socials = [
         {{ $t("subtitle") }}
       </h2>
       <p class="about">
-        {{ $t("short_about_text") }}
+        {{ $t("short_about_text", { year: (new Date()).getFullYear() - 2003 }) }}
       </p>
       <div class="socials">
         <a
@@ -72,7 +72,7 @@ const socials = [
 }
 
 .subtitle {
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.75rem;
 }
 
 .about {

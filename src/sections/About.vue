@@ -40,7 +40,7 @@ const language_skills = [
         {{ $t("about_title") }}
       </h3>
       <div class="section-content">
-        <pre><p>{{ $t("about_text") }}</p></pre>
+        <pre class="about-text">{{ $t("about_text") }}</pre>
       </div>
     </div>
     <div class="right-section">
@@ -93,8 +93,13 @@ const language_skills = [
   }
 }
 
+.about-text {
+  color: var(--app-inactive-font-color);
+  text-align: justify;
+}
+
 .left-section {
-  flex-basis: 50%;
+  flex-basis: 60%;
   flex-shrink: 0;
   margin: 0 2rem 0 0;
 
@@ -104,7 +109,7 @@ const language_skills = [
 }
 
 .right-section {
-  flex-basis: 50%;
+  flex-basis: 40%;
   flex-shrink: 0;
 
   .section-content {
