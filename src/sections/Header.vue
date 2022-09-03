@@ -45,6 +45,7 @@ function toggleDarkTheme() {
         </a>
         <button
           class="theme-button"
+          aria-label="Toggle Theme"
           @click="toggleDarkTheme"
         >
           <Icon

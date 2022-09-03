@@ -54,7 +54,7 @@ const language_skills = [
               class="icon"
               :icon="Programming"
             />
-            <h6>{{ $t("programming_title") }}</h6>
+            <h4>{{ $t("programming_title") }}</h4>
           </div>
           <SkillBox 
             v-for="skill of programming_skills"
@@ -70,7 +70,7 @@ const language_skills = [
               class="icon"
               :icon="Language"
             />
-            <h6>{{ $t("language_title") }}</h6>
+            <h4>{{ $t("language_title") }}</h4>
           </div>
           <SkillBox 
             v-for="skill of language_skills"
@@ -130,7 +130,7 @@ const language_skills = [
       margin-bottom: 1rem;
     }
 
-    h6 {
+    h4 {
       font-size: 1rem;
       font-weight: 500;
       text-transform: uppercase;
