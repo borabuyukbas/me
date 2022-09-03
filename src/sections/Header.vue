@@ -37,7 +37,8 @@ function toggleDarkTheme() {
           v-for="locale of locales"
           :key="'localeButton_' + locale"
           :class="{ active: $i18n.locale === locale.name }"
-          @click="$i18n.locale = locale.name"
+          href="/"
+          @click.prevent="$i18n.locale = locale.name"
         >
           <Icon
             :icon="locale.icon"
