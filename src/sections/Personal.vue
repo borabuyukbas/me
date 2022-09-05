@@ -12,7 +12,7 @@ const socials = [
   { icon: Gitlab, title: "GitLab", link: "https://gitlab.com/borabuyukbas" },
   { icon: Instagram, title: "Instagram", link: "https://instagram.com/borabbs" },
   { icon: Linkedin, title: "LinkedIn", link: "https://www.linkedin.com/in/borabuyukbas" },
-  { icon: Mail, title: "Mail", link: "mailto:borabykbs@gmail.com" },
+  { icon: Mail, title: "Mail", link: "mailto:me@bora.bbs.tr" },
 ]
 </script>
 
