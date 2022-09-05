@@ -26,7 +26,11 @@ const socials = [
         {{ $t("subtitle") }}
       </h2>
       <p class="about">
-        {{ $t("short_about_text", { year: (new Date()).getFullYear() - 2003 }) }}
+        {{
+          $t("short_about_text", { 
+            year: Math.floor((new Date().valueOf() - 1062622800000) / 31557600000) // divided by 1000*60*60*24*365.25
+          })
+        }}
       </p>
       <div class="socials">
         <a
