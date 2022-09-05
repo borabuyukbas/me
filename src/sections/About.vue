@@ -109,8 +109,8 @@ const language_skills = [
 }
 
 .right-section {
-  flex-basis: 40%;
   flex-shrink: 0;
+  flex-grow: 1;
 
   .section-content {
     display: flex;
