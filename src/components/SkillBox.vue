@@ -66,6 +66,6 @@ const styleObject = { "--percent": `${props.percentage * 100}%` };
 }
 
 .skill-name {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
 }
 </style>
