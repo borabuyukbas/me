@@ -1,18 +1,10 @@
 <script setup lang="ts">
-import { Icon } from "@iconify/vue/dist/offline";
-
-import Instagram from "@iconify/icons-ion/logo-instagram";
-import Github from "@iconify/icons-ion/logo-github";
-import Gitlab from "@iconify/icons-ion/logo-gitlab";
-import Linkedin from "@iconify/icons-ion/logo-linkedin";
-import Mail from "@iconify/icons-ion/mail";
-
 const socials = [
-  { icon: Github, title: "GitHub", link: "https://github.com/borabuyukbas" },
-  { icon: Gitlab, title: "GitLab", link: "https://gitlab.com/borabuyukbas" },
-  { icon: Instagram, title: "Instagram", link: "https://instagram.com/borabbs" },
-  { icon: Linkedin, title: "LinkedIn", link: "https://www.linkedin.com/in/borabuyukbas" },
-  { icon: Mail, title: "Mail", link: "mailto:me@bora.bbs.tr" },
+  { icon: "ion:logo-github", title: "GitHub", link: "https://github.com/borabuyukbas" },
+  { icon: "ion:logo-gitlab", title: "GitLab", link: "https://gitlab.com/borabuyukbas" },
+  { icon: "ion:logo-instagram", title: "Instagram", link: "https://instagram.com/borabbs" },
+  { icon: "ion:logo-linkedin", title: "LinkedIn", link: "https://www.linkedin.com/in/borabuyukbas" },
+  { icon: "ion:mail", title: "Mail", link: "mailto:me@bora.bbs.tr" },
 ]
 </script>
 
@@ -41,7 +33,7 @@ const socials = [
           target="_blank"
         >
           <Icon
-            :icon="social.icon"
+            :name="social.icon"
           />
         </a>
       </div>

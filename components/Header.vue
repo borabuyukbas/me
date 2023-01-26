@@ -1,29 +1,30 @@
 <script setup lang="ts">
-import { ref } from "vue";
-import { Icon } from "@iconify/vue/dist/offline";
-import { locales } from "../i18n";
+const { localeCodes, setLocale } = useI18n()
+const colorMode = useColorMode()
 
-import Sunny from "@iconify/icons-ion/sunny-outline";
-import Moon from "@iconify/icons-ion/moon-outline";
-
-const isDarkThemeEnabled = ref(
-  window.matchMedia("(prefers-color-scheme: dark)").matches
-);
-
-if (isDarkThemeEnabled.value) {
-  document.documentElement.setAttribute("theme", "dark");
-  document.querySelector('link[rel="icon"]')!.setAttribute('href', 'favicon-light.png');
-}
+const currentTheme = computed(() => {
+  return colorMode.value;
+})
 
 function toggleDarkTheme() {
-  document.documentElement.setAttribute(
-    "theme",
-    isDarkThemeEnabled.value ? "light" : "dark"
-  );
-  document.querySelector('link[rel="icon"]')!.setAttribute('href', isDarkThemeEnabled.value ? 'favicon-dark.png' : 'favicon-light.png');
-
-  isDarkThemeEnabled.value = !isDarkThemeEnabled.value;
+  colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark';
 }
+
+function flagName(country_code: string) {
+  switch (country_code) {
+    case "en":
+      return "twemoji:flag-united-kingdom";
+      break
+    case "de":
+      return "twemoji:flag-germany";
+      break
+    default:
+    case "tr":
+      return "twemoji:flag-turkey";
+      break
+  }
+}
+
 </script>
 
 <template>
@@ -33,24 +34,25 @@ function toggleDarkTheme() {
         <!-- <a href="/">Home</a> -->
       </div>
       <div class="nav-right">
-        <a
-          v-for="locale of locales"
+        <nuxt-link
+          v-for="locale in localeCodes"
           :key="'localeButton_' + locale"
-          :class="{ active: $i18n.locale === locale.name }"
+          :class="{ active: $i18n.locale === locale }"
           href="/"
-          @click.prevent="$i18n.locale = locale.name"
+          @click.prevent="setLocale(locale)"
         >
           <Icon
-            :icon="locale.icon"
+            :name="flagName(locale)"
           />
-        </a>
+        </nuxt-link>
         <button
           class="theme-button"
           aria-label="Toggle Theme"
           @click="toggleDarkTheme"
         >
           <Icon
-            :icon="isDarkThemeEnabled ? Sunny : Moon"
+            :name="colorMode.unknown ? 'ion:load-c' : (currentTheme === 'dark' ? 'ion:sunny-outline' : 'ion:moon-outline')"
+            class="spin"
           />
         </button>
       </div>

@@ -1,35 +1,19 @@
 <script setup lang="ts">
-import { Icon } from "@iconify/vue/dist/offline";
-
-import Language from "@iconify/icons-ion/language";
-import Programming from "@iconify/icons-ion/code";
-
-import Typescript from "@iconify/icons-vscode-icons/file-type-typescript-official";
-import Javascript from "@iconify/icons-vscode-icons/file-type-js-official";
-import CSharp from "@iconify/icons-vscode-icons/file-type-csharp2";
-import Java from "@iconify/icons-vscode-icons/file-type-java";
-import PHP from "@iconify/icons-vscode-icons/file-type-php";
-import Python from "@iconify/icons-vscode-icons/file-type-python";
-
-import TR from "@iconify/icons-twemoji/flag-turkey";
-import EN from "@iconify/icons-twemoji/flag-united-kingdom";
-import DE from "@iconify/icons-twemoji/flag-germany";
-
-import SkillBox from "../components/SkillBox.vue";
+import SkillBox from "./SkillBox.vue";
 
 const programming_skills = [
-  { name: "Typescript", percentage: 0.95, icon: Typescript },
-  { name: "Javascript", percentage: 0.95, icon: Javascript },
-  { name: "C#", percentage: 0.9, icon: CSharp },
-  { name: "Java", percentage: 0.8, icon: Java },
-  { name: "PHP", percentage: 0.75, icon: PHP },
-  { name: "Python", percentage: 0.7, icon: Python },
+  { name: "Typescript", percentage: 0.95, icon: "vscode-icons:file-type-typescript-official" },
+  { name: "Javascript", percentage: 0.95, icon: "vscode-icons:file-type-js-official" },
+  { name: "C#", percentage: 0.9, icon: "vscode-icons:file-type-csharp2" },
+  { name: "Java", percentage: 0.8, icon: "vscode-icons:file-type-java" },
+  { name: "PHP", percentage: 0.75, icon: "vscode-icons:file-type-php" },
+  { name: "Python", percentage: 0.7, icon: "vscode-icons:file-type-python" },
 ];
 
 const language_skills = [
-  { name: "Türkçe", percentage: 1.0, icon: TR, alt: "native" },
-  { name: "English", percentage: 0.9, icon: EN, alt: "B2-C1" },
-  { name: "Deutsch", percentage: 0.7, icon: DE, alt: "B2" },
+  { name: "Türkçe", percentage: 1.0, icon: "twemoji:flag-turkey", alt: "native" },
+  { name: "English", percentage: 0.9, icon: "twemoji:flag-united-kingdom", alt: "B2-C1" },
+  { name: "Deutsch", percentage: 0.7, icon: "twemoji:flag-germany", alt: "B2" },
 ]
 </script>
 
@@ -52,7 +36,7 @@ const language_skills = [
           <div class="skill-group-title">
             <Icon
               class="icon"
-              :icon="Programming"
+              name="ion:code"
             />
             <h4>{{ $t("programming_title") }}</h4>
           </div>
@@ -68,7 +52,7 @@ const language_skills = [
           <div class="skill-group-title">
             <Icon
               class="icon"
-              :icon="Language"
+              name="ion:language"
             />
             <h4>{{ $t("language_title") }}</h4>
           </div>

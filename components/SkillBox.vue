@@ -1,7 +1,4 @@
 <script setup lang="ts">
-import { IconifyIcon } from "@iconify/types";
-import { Icon } from "@iconify/vue/dist/offline";
-
 import { useI18n } from "vue-i18n";
 
 const { te, t } = useI18n();
@@ -9,7 +6,7 @@ const { te, t } = useI18n();
 const props = defineProps<{
     name: string,
     percentage: number,
-    icon: IconifyIcon,
+    icon: string,
     alt?: string
 }>();
 
@@ -23,7 +20,7 @@ const styleObject = { "--percent": `${props.percentage * 100}%` };
   >
     <Icon
       class="icon"
-      :icon="icon"
+      :name="icon"
     />
     <span class="skill-name">
       {{ props.name }}
