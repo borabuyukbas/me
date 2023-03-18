@@ -5,24 +5,20 @@ const { te, t } = useI18n();
 
 const props = defineProps<{
     name: string,
-    percentage: number,
     icon: string,
     alt?: string
 }>();
-
-const styleObject = { "--percent": `${props.percentage * 100}%` };
 </script>
 
 <template>
   <div
-    class="skill"
-    :style="styleObject"
+    class="flex justify-between items-center p-2 m-1 rounded-3 border-1 relative overflow-hidden border-neutral-500"
   >
-    <Icon
-      class="icon"
-      :name="icon"
+    <div
+      class="text-xl mr-1"
+      :class="icon"
     />
-    <span class="skill-name">
+    <span class="text-xs">
       {{ props.name }}
       {{ props.alt ?
         "(" + (te(props.alt) ? t(props.alt) : props.alt) + ")"
@@ -31,38 +27,3 @@ const styleObject = { "--percent": `${props.percentage * 100}%` };
     </span>
   </div>
 </template>
-
-<style lang="scss" scoped>
-.skill {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.5rem;
-    margin: 0.25rem;
-    border-radius: 0.75rem;
-    border: 0.1rem var(--app-border-color) solid;
-
-    position: relative;
-    overflow: hidden;
-
-    &:after {
-        @include transition;
-        content: '\A';
-        position: absolute;
-        background: var(--app-active-color);
-        top: 0;
-        bottom: 0;
-        left: 0;
-        width: var(--percent);
-        z-index: -1;
-    }
-}
-
-.icon {
-    font-size: 1.25rem;
-}
-
-.skill-name {
-  font-size: 0.75rem;
-}
-</style>

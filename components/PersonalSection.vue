@@ -9,103 +9,41 @@ const socials = [
 </script>
 
 <template>
-  <div class="card">
-    <div class="personal-left">
-      <h1 class="title">
+  <div class="flex flex-col-reverse lg:flex-row mb-16">
+    <div class="flex flex-1 flex-col justify-center">
+      <h1 class="mb-2 font-700 text-8 lg:text-12">
         Bora Büyükbaş
       </h1>
-      <h2 class="subtitle">
+      <h2 class="mb-4">
         {{ $t("subtitle") }}
       </h2>
-      <p class="about">
+      <p class="mb-4 text-neutral-500">
         {{
           $t("short_about_text", { 
             year: Math.floor((new Date().valueOf() - 1062622800000) / 31557600000) // divided by 1000*60*60*24*365.25
           })
         }}
       </p>
-      <div class="socials">
+      <div class="flex">
         <a
           v-for="(social, i) of socials"
           :key="'Psocial_' + i"
           :href="social.link"
           :title="social.title"
+          class="text-5 mr-2 text-neutral-500 hover:text-neutral-700 dark:hover:text-neutral-300 transition-colors"
           target="_blank"
         >
-          <Icon
-            :name="social.icon"
+          <div
+            :class="social.icon"
           />
         </a>
       </div>
     </div>
-    <div class="personal-right">
-      <div class="avatar" />
+    <div class="mb-1 lg:mb-0">
+      <div
+        class="w-32 h-32 lg:w-48 lg:h-48 rounded-[9999px] bg-cover"
+        style="background-image: url('https://avatars.githubusercontent.com/u/45436094?v=4');"
+      />
     </div>
   </div>
 </template>
-
-<style lang="scss" scoped>
-.card {
-    @media screen and (max-width: 1024px) {
-        flex-direction: column-reverse;
-    }
-}
-
-.personal-left {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.title {
-    font-weight: 700;
-    font-size: 3rem;
-    margin-bottom: 0.25rem;
-
-    @media screen and (max-width: 1024px) {
-        font-size: 2rem;
-    }
-}
-
-.subtitle {
-    margin-bottom: 0.75rem;
-}
-
-.about {
-    margin-bottom: 0.75rem;
-}
-
-.socials {
-    svg {
-        @include transition;
-
-        font-size: 1.25rem;
-        margin-right: 0.5rem;
-        color: var(--app-inactive-font-color);
-
-        &:hover {
-            color: var(--app-font-color);
-        }
-    }
-}
-
-.personal-right {
-    @media screen and (max-width: 1024px) {
-        margin-bottom: 1rem;
-    }
-}
-
-.avatar {
-    width: 12rem;
-    height: 12rem;
-    border-radius: 9999px;
-    background-image: url("https://avatars.githubusercontent.com/u/45436094?v=4");
-    background-size: cover;
-
-    @media screen and (max-width: 1024px) {
-        width: 8rem;
-        height: 8rem;
-    }
-}
-</style>

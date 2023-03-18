@@ -2,66 +2,62 @@
 import SkillBox from "./SkillBox.vue";
 
 const programming_skills = [
-  { name: "Typescript", percentage: 0.95, icon: "vscode-icons:file-type-typescript-official" },
-  { name: "Javascript", percentage: 0.95, icon: "vscode-icons:file-type-js-official" },
-  { name: "C#", percentage: 0.9, icon: "vscode-icons:file-type-csharp2" },
-  { name: "Java", percentage: 0.8, icon: "vscode-icons:file-type-java" },
-  { name: "PHP", percentage: 0.75, icon: "vscode-icons:file-type-php" },
-  { name: "Python", percentage: 0.7, icon: "vscode-icons:file-type-python" },
+  { name: "Typescript", icon: "vscode-icons:file-type-typescript-official" },
+  { name: "Javascript", icon: "vscode-icons:file-type-js-official" },
+  { name: "C#", icon: "vscode-icons:file-type-csharp2" },
+  { name: "Java", icon: "vscode-icons:file-type-java" },
+  { name: "PHP", icon: "vscode-icons:file-type-php" },
+  { name: "Python", icon: "vscode-icons:file-type-python" },
 ];
 
 const language_skills = [
-  { name: "Türkçe", percentage: 1.0, icon: "twemoji:flag-turkey", alt: "native" },
-  { name: "English", percentage: 0.9, icon: "twemoji:flag-united-kingdom", alt: "B2-C1" },
-  { name: "Deutsch", percentage: 0.7, icon: "twemoji:flag-germany", alt: "B2" },
+  { name: "Türkçe", icon: "twemoji:flag-turkey", alt: "native" },
+  { name: "English", icon: "twemoji:flag-united-kingdom", alt: "B2-C1" },
+  { name: "Deutsch", icon: "twemoji:flag-germany", alt: "B2" },
 ]
 </script>
 
 <template>
-  <div class="card">
-    <div class="left-section">
-      <h3 class="section-header">
+  <div class="flex lg:flex-row flex-col mb-4">
+    <div class="flex-shrink-0 flex-basis-60% mb-2 lg:mb-0 mr-0 lg:mr-2 lg:mb-2">
+      <h3 class="text-2xl font-bold mb-2">
         {{ $t("about_title") }}
       </h3>
-      <div class="section-content">
-        <pre class="about-text">{{ $t("about_text") }}</pre>
+      <div class="text-justify whitespace-pre-line text-neutral-500 lh-snug">
+        {{ $t("about_text") }}
       </div>
     </div>
-    <div class="right-section">
-      <h3 class="section-header">
+    <div class="flex-shrink-0 flex-grow-1">
+      <h3 class="text-2xl font-bold mb-2">
         {{ $t("skills_title") }}
       </h3>
-      <div class="section-content">
-        <div class="skill-group">
-          <div class="skill-group-title">
-            <Icon
-              class="icon"
-              name="ion:code"
+      <div class="flex flex-col lg:flex-row">
+        <div class="flex flex-col flex-grow-1 flex-basis-50% mb-1 lg:mb-0">
+          <div class="flex justify-start pl-2 items-center lh-normal text-neutral-500">
+            <div
+              class="text-xl mr-1 ion:code"
             />
-            <h4>{{ $t("programming_title") }}</h4>
+            <h4 class="uppercase font-500">{{ $t("programming_title") }}</h4>
           </div>
           <SkillBox 
             v-for="skill of programming_skills"
             :key="'programming_skill_'+skill.name"
             :name="skill.name"
             :icon="skill.icon"
-            :percentage="skill.percentage"
           />
         </div>
-        <div class="skill-group">
-          <div class="skill-group-title">
-            <Icon
-              class="icon"
-              name="ion:language"
+        <div class="flex flex-col flex-grow-1 flex-basis-50% mb-1 lg:mb-0">
+          <div class="flex justify-start pl-2 items-center lh-normal text-neutral-500">
+            <div
+              class="text-xl mr-1 ion:language"
             />
-            <h4>{{ $t("language_title") }}</h4>
+            <h4 class="uppercase font-500">{{ $t("language_title") }}</h4>
           </div>
           <SkillBox 
             v-for="skill of language_skills"
             :key="'language_skill_'+skill.name"
             :name="skill.name"
             :icon="skill.icon"
-            :percentage="skill.percentage"
             :alt="skill.alt"
           />
         </div>
@@ -69,76 +65,3 @@ const language_skills = [
     </div>
   </div>
 </template>
-
-<style lang="scss" scoped>
-.card {
-  @media screen and (max-width: 1024px) {
-    flex-direction: column;
-  }
-}
-
-.about-text {
-  color: var(--app-inactive-font-color);
-  text-align: justify;
-}
-
-.left-section {
-  flex-basis: 60%;
-  flex-shrink: 0;
-  margin: 0 2rem 0 0;
-
-  @media screen and (max-width: 1024px) {
-    margin: 0 0 2rem 0;
-  }
-}
-
-.right-section {
-  flex-shrink: 0;
-  flex-grow: 1;
-
-  .section-content {
-    display: flex;
-
-    @media screen and (max-width: 1024px) {
-      flex-direction: column;
-    }
-  }
-
-  .skill-group {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    flex-basis: 50%;
-
-    @media screen and (max-width: 1024px) {
-      margin-bottom: 1rem;
-    }
-
-    h4 {
-      font-size: 1rem;
-      font-weight: 500;
-      text-transform: uppercase;
-    }
-  }
-}
-
-.skill-group-title {
-  display: flex;
-  justify-content: left;
-  padding-left: 0.5rem;
-  align-items: center;
-  line-height: 1.5rem;
-  color: var(--app-inactive-font-color);
-
-  .icon {
-    font-size: 1.25rem;
-    margin-right: 0.25rem;
-  }
-}
-
-.section-header {
-  font-size: 1.75rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-}
-</style>

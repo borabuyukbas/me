@@ -1,13 +1,12 @@
 <script setup lang="ts">
 const { localeCodes, setLocale } = useI18n()
-const colorMode = useColorMode()
 
 const currentTheme = computed(() => {
-  return colorMode.value;
+  return useColorMode().value;
 })
 
 function toggleDarkTheme() {
-  colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark';
+  useColorMode().preference = currentTheme.value === 'dark' ? 'light' : 'dark';
 }
 
 function flagName(country_code: string) {
@@ -28,86 +27,45 @@ function flagName(country_code: string) {
 </script>
 
 <template>
-  <div class="header">
-    <nav>
-      <div class="nav-left">
-        <!-- <a href="/">Home</a> -->
+  <div class="mb-16">
+    <nav class="flex items-center justify-between">
+      <div class="flex items-center">
+        <NuxtLink
+          class="px-4 py-1"
+          active-class=""
+          href="/"
+        >
+          Home
+        </NuxtLink>
       </div>
-      <div class="nav-right">
-        <nuxt-link
+      <div class="flex items-center">
+        <a
           v-for="locale in localeCodes"
           :key="'localeButton_' + locale"
-          :class="{ active: $i18n.locale === locale }"
+          :class="{ 'bg-light-700 dark:bg-dark-500': $i18n.locale === locale }"
+          class="flex items-center justify-center p-2 mr-2 cursor-pointer hover:bg-light-900 dark:hover:bg-dark-300 transition-colors rounded-2"
           href="/"
           @click.prevent="setLocale(locale)"
         >
-          <Icon
-            :name="flagName(locale)"
+          <div
+            :class="flagName(locale)"
           />
-        </nuxt-link>
+        </a>
         <button
-          class="theme-button"
+          class="flex justify-center items-center h-8 w-8 bg-light-700 hover:bg-light-900 dark:bg-dark-500 dark:hover:bg-dark-300 transition-colors cursor-pointer rounded-2"
           aria-label="Toggle Theme"
           @click="toggleDarkTheme"
         >
-          <Icon
-            :name="colorMode.unknown ? 'ion:load-c' : (currentTheme === 'dark' ? 'ion:sunny-outline' : 'ion:moon-outline')"
-            class="spin"
-          />
+          <ColorScheme
+            class="ion:load-c animate-spin"
+            tag="div"
+          >
+            <div
+              :class="currentTheme === 'dark' ? 'ion:moon-outline': 'ion:sunny-outline'"
+            />
+          </ColorScheme>
         </button>
       </div>
     </nav>
   </div>
 </template>
-
-<style lang="scss" scoped>
-.header {
-  margin-bottom: 4rem;
-}
-
-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.nav-left a {
-  margin-right: 0.5rem;
-  padding: 0.5rem 0.75rem;
-  border-radius: 0.5rem;
-  font-size: 1rem;
-}
-
-.nav-right {
-  display: flex;
-  align-items: center;
-
-  a {
-    @include activateable;
-    @include hoverable;
-
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.5rem;
-    margin-right: 0.5rem;
-    border-radius: 0.5rem;
-    font-size: 1rem;
-  }
-}
-
-.theme-button {
-  cursor: pointer;
-  border-radius: 0.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 2rem;
-  width: 2rem;
-}
-
-svg {
-  font-size: 1rem;
-}
-</style>

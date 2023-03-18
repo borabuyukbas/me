@@ -1,18 +1,30 @@
+import { defineNuxtConfig } from 'nuxt/config'
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules: [
+    '@unocss/nuxt',
     '@nuxtjs/i18n',
-    '@nuxtjs/color-mode',
-    'nuxt-icon'
+    '@nuxtjs/color-mode'
   ],
-  vite: {
-    css: {
-      preprocessorOptions: {
-        scss: {
-          additionalData: '@use "@/assets/index.scss" as *;'
+  unocss: {
+    uno: true,
+    preflight: true,
+    icons: {
+      cdn: 'https://esm.sh/',
+      prefix: ''
+    },
+    webFonts: {
+      provider: 'google',
+      fonts: {
+        sans: {
+          name: 'Rubik',
+          weights: [300, 500, 700]
         }
       }
     }
+  },
+  colorMode: {
+    classSuffix: '',
   },
   i18n: {
     langDir: 'locales',
