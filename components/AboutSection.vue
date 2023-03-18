@@ -37,7 +37,9 @@ const language_skills = [
             <div
               class="text-xl mr-1 ion:code"
             />
-            <h4 class="uppercase font-500">{{ $t("programming_title") }}</h4>
+            <h4 class="uppercase font-500">
+              {{ $t("programming_title") }}
+            </h4>
           </div>
           <SkillBox 
             v-for="skill of programming_skills"
@@ -51,7 +53,9 @@ const language_skills = [
             <div
               class="text-xl mr-1 ion:language"
             />
-            <h4 class="uppercase font-500">{{ $t("language_title") }}</h4>
+            <h4 class="uppercase font-500">
+              {{ $t("language_title") }}
+            </h4>
           </div>
           <SkillBox 
             v-for="skill of language_skills"
