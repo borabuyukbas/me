@@ -61,7 +61,7 @@ function flagName(country_code: string) {
             tag="div"
           >
             <div
-              :class="currentTheme === 'dark' ? 'ion:moon-outline': 'ion:sunny-outline'"
+              :class="currentTheme === 'light' ? 'ion:moon-outline': 'ion:sunny-outline'"
             />
           </ColorScheme>
         </button>
