@@ -31,7 +31,7 @@ function flagName(country_code: string) {
     <nav class="flex items-center justify-between">
       <div class="flex items-center">
         <NuxtLink
-          class="px-4 py-1"
+          class="pr-4 py-1"
           active-class=""
           href="/"
         >
