@@ -1,25 +1,25 @@
 <script setup lang="ts">
-import SkillBox from "./SkillBox.vue";
+import SkillBox, { Skill } from "./SkillBox.vue";
 
-const programming_skills = [
-  { name: "Typescript", icon: "vscode-icons:file-type-typescript-official" },
-  { name: "Javascript", icon: "vscode-icons:file-type-js-official" },
-  { name: "C#", icon: "vscode-icons:file-type-csharp2" },
-  { name: "Java", icon: "vscode-icons:file-type-java" },
-  { name: "PHP", icon: "vscode-icons:file-type-php" },
-  { name: "Python", icon: "vscode-icons:file-type-python" },
+const programming_skills: Skill[] = [
+  { name: "Typescript", icon: "mdi:language-typescript" },
+  { name: "Javascript", icon: "mdi:language-javascript" },
+  { name: "Java", icon: "mdi:language-java" },
+  { name: "C#", icon: "mdi:language-csharp" },
+  { name: "PHP", icon: "mdi:language-php" },
+  { name: "Python", icon: "mdi:language-python", },
 ];
 
-const language_skills = [
+const language_skills: Skill[] = [
   { name: "Türkçe", icon: "twemoji:flag-turkey", alt: "native" },
-  { name: "English", icon: "twemoji:flag-united-kingdom", alt: "B2-C1" },
-  { name: "Deutsch", icon: "twemoji:flag-germany", alt: "B2" },
+  { name: "English", icon: "twemoji:flag-united-kingdom", alt: "C1" },
+  { name: "Deutsch", icon: "twemoji:flag-germany", alt: "C1" },
 ]
 </script>
 
 <template>
-  <div class="flex lg:flex-row flex-col mb-16">
-    <div class="flex-shrink-0 flex-basis-60% mb-2 lg:mb-0 mr-0 lg:mr-8 mb-8">
+  <div class="flex lg:flex-row flex-col mb-12">
+    <div class="flex-shrink-0 flex-basis-75% mb-2 lg:mb-0 mr-0 lg:mr-8 mb-8">
       <h3 class="text-2xl font-bold mb-2">
         {{ $t("about_title") }}
       </h3>
@@ -31,9 +31,9 @@ const language_skills = [
       <h3 class="text-2xl font-bold mb-2">
         {{ $t("skills_title") }}
       </h3>
-      <div class="flex flex-col lg:flex-row">
-        <div class="flex flex-col flex-grow-1 flex-basis-50% mb-1 lg:mb-0">
-          <div class="flex justify-start pl-2 items-center lh-normal text-neutral-500">
+      <div class="flex flex-col">
+        <div class="flex flex-col flex-grow-1 flex-basis-50% mb-2">
+          <div class="flex justify-start items-center lh-normal text-neutral-500 mb-1">
             <div
               class="text-xl mr-1 ion:code"
             />
@@ -46,10 +46,11 @@ const language_skills = [
             :key="'programming_skill_'+skill.name"
             :name="skill.name"
             :icon="skill.icon"
+            :alt="skill.alt"
           />
         </div>
-        <div class="flex flex-col flex-grow-1 flex-basis-50% mb-1 lg:mb-0">
-          <div class="flex justify-start pl-2 items-center lh-normal text-neutral-500">
+        <div class="flex flex-col flex-grow-1 flex-basis-50%">
+          <div class="flex justify-start items-center lh-normal text-neutral-500 mb-1">
             <div
               class="text-xl mr-1 ion:language"
             />
