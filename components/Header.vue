@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { localeCodes, setLocale } = useI18n()
+const { localeCodes, setLocale, t } = useI18n()
 
 const currentTheme = computed(() => {
   return useColorMode().value;
@@ -35,7 +35,7 @@ function flagName(country_code: string) {
           active-class=""
           href="/"
         >
-          Home
+          {{ t("pages_home") }}
         </NuxtLink>
       </div>
       <div class="flex items-center">
