@@ -3,33 +3,27 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build",
-    "preview": "vite preview",
-    "lint": "eslint --ext .ts,.vue src",
+    "dev": "nuxi dev",
+    "build": "nuxi build",
+    "start": "nuxi preview",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "lint": "eslint --ext \".ts,.js,.vue\" --ignore-path .eslintignore .",
     "lint:fix": "yarn lint --fix"
   },
-  "dependencies": {
-    "@iconify/icons-ion": "^1.2.3",
-    "@iconify/icons-twemoji": "^1.2.5",
-    "@iconify/icons-vscode-icons": "^1.2.13",
-    "vue": "^3.2.25",
-    "vue-i18n": "9"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "@iconify/vue": "^3.2.1",
-    "@intlify/vite-plugin-vue-i18n": "^6.0.1",
+    "@nuxt/eslint-config": "^0.1.1",
+    "@nuxtjs/color-mode": "^3.2.0",
+    "@nuxtjs/i18n": "^8.0.0-beta.8",
     "@typescript-eslint/eslint-plugin": "^5.35.1",
     "@typescript-eslint/parser": "^5.35.1",
-    "@vitejs/plugin-vue": "^2.3.3",
-    "eslint": "^8.22.0",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-n": "^15.2.5",
-    "eslint-plugin-promise": "^6.0.1",
+    "@unocss/nuxt": "^0.50.4",
+    "eslint": "^8.32.0",
+    "eslint-plugin-nuxt": "^4.0.0",
     "eslint-plugin-vue": "^9.4.0",
-    "sass": "^1.54.5",
-    "typescript": "^4.5.4",
-    "vite": "^2.9.9",
-    "vue-tsc": "^0.34.7"
+    "nuxt": "^3.2.3",
+    "typescript": "^4.5.4"
   }
 }
