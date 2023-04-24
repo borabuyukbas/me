@@ -5,7 +5,10 @@ useHead({
   },
   link: [
     { rel: 'icon', type: 'image/png', href: '/favicon.png' }
-  ]
+  ],
+  titleTemplate: (titleChunk) => {
+    return titleChunk ? `${titleChunk} - Bora Büyükbaş` : 'Bora Büyükbaş';
+  },
 })
 </script>
 
