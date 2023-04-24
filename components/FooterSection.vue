@@ -15,7 +15,7 @@ const link_groups = [
 </script>
 
 <template>
-  <hr class="border-neutral-300 dark:border-neutral-800">
+  <hr class="border-neutral-300 dark:border-neutral-800 mb-8">
   <div class="flex flex-col-reverse lg:flex-row mb-16">
     <div class="w-full grid grid-cols-3">
       <div
@@ -30,7 +30,7 @@ const link_groups = [
           <a
             :href="link.link"
             target="_blank"
-            class="text-neutral-500 hover:text-neutral-700 dark:hover:text-neutral-300"
+            class="text-neutral-500 hover:text-neutral-700 dark:hover:text-neutral-300 transition-colors"
           >{{ link.name }}</a>
         </div>
       </div>
