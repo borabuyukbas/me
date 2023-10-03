@@ -6,23 +6,6 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     '@nuxtjs/color-mode'
   ],
-  unocss: {
-    uno: true,
-    preflight: true,
-    icons: {
-      cdn: 'https://esm.sh/',
-      prefix: ''
-    },
-    webFonts: {
-      provider: 'google',
-      fonts: {
-        sans: {
-          name: 'Rubik',
-          weights: [300, 500, 700]
-        }
-      }
-    }
-  },
   colorMode: {
     classSuffix: '',
   },

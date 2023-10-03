@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import '@unocss/reset/tailwind-compat.css'
+
 useHead({
   bodyAttrs: {
     class: "bg-white text-dark-900 dark:bg-dark-900 dark:text-neutral-50 transition-all font-sans font-300 lh-none"
