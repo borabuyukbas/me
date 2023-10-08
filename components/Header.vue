@@ -27,12 +27,12 @@ function flagName(country_code: string) {
 </script>
 
 <template>
-  <div class="mb-16">
+  <div>
     <nav class="flex items-center justify-between">
       <div class="flex items-center">
         <NuxtLink
-          class="pr-4 py-1"
-          active-class=""
+          class="pr-4 py-1 text-neutral-500 hover:text-neutral-700 dark:hover:text-neutral-300 transition-colors font-bold uppercase"
+          active-class="text-neutral-700 dark:text-neutral-300"
           href="/"
         >
           {{ t("pages_home") }}
