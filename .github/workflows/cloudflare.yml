@@ -9,6 +9,7 @@ on:
       - '**.ts'
       - '**.vue'
       - '**.json'
+      - '.github/workflows/cloudflare.yml'
       - 'wrangler.toml'
       - 'public'
       - '!.vscode'
@@ -20,7 +21,7 @@ jobs:
     strategy:
       matrix:
         os: [ ubuntu-latest ]
-        node: [ 14 ]
+        node: [ 18 ]
 
     steps:
       - uses: actions/setup-node@v1
