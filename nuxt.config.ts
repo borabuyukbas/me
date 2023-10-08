@@ -18,11 +18,6 @@ export default defineNuxtConfig({
     ],
     lazy: true,
     defaultLocale: 'en',
-    strategy: 'no_prefix',
-    vueI18n: {
-      legacy: false,
-      locale: 'tr',
-      fallbackLocale: 'en',
-    }
+    strategy: 'no_prefix'
   }
 })
