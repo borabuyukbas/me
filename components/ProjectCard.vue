@@ -16,16 +16,23 @@ const languageColors: Record<string, string> = {
   "C": "#555555",
   "C++": "#f34b7d",
   "C#": "#178600",
+  "CSS": "#563d7c",
   "Dart": "#00B4AB",
   "Go": "#00ADD8",
+  "HTML": "#e34c26",
   "Java": "#b07219",
   "JavaScript": "#f1e05a",
+  "JSON": "#292929",
   "Jupyter Notebook": "#da5b0b",
+  "Kotlin": "#a97bff",
   "Nix": "#7e7eff",
   "PHP": "#4F5D95",
   "Python": "#3572A5",
   "Rust": "#dea584",
   "Scala": "#c22d40",
+  "Shell": "#89e051",
+  "Svelte": "#ff3e00",
+  
   "TypeScript": "#3178c6",
 }
 
