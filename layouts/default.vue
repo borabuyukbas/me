@@ -16,6 +16,7 @@ useHead({
 
 <template>
   <div class="p-6 lg:px-48 min-h-screen flex flex-col">
+    <NuxtLoadingIndicator :color="useColorMode().value == 'dark' ? 'rgb(250 250 250)' : 'rgb(15 15 15)'" />
     <Header class="mb-8" />
     <slot />
   </div>
