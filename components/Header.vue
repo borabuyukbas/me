@@ -9,19 +9,10 @@ function toggleDarkTheme() {
   useColorMode().preference = currentTheme.value === 'dark' ? 'light' : 'dark';
 }
 
-function flagName(country_code: string) {
-  switch (country_code) {
-    case "en":
-      return "twemoji:flag-united-kingdom";
-      break
-    case "de":
-      return "twemoji:flag-germany";
-      break
-    default:
-    case "tr":
-      return "twemoji:flag-turkey";
-      break
-  }
+const flagIcons: Record<string, string> = {
+  "en": "twemoji:flag-united-kingdom",
+  "de": "twemoji:flag-germany",
+  "tr": "twemoji:flag-turkey"
 }
 
 const navActive = useState("navActive", () => false)
@@ -80,7 +71,7 @@ useNuxtApp().$router.afterEach(() => {
           @click.prevent="setLocale(locale)"
         >
           <div
-            :class="flagName(locale)"
+            :class="flagIcons[locale]"
           />
         </a>
         <button
