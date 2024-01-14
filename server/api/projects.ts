@@ -56,7 +56,7 @@ async function getHFModels(): Promise<Project[]> {
 
   return hfJson.map(e => <Project>{
     name: e.id.split("/").at(-1),
-    description: `A(n) ${e.pipeline_tag} model available built with ${e.library_name} technology on the Hugging Face.`,
+    description: `A(n) ${e.pipeline_tag} model built with ${e.library_name} technology available on the Hugging Face.`,
     url: `https://huggingface.co/${e.id}`,
     platform: "Hugging Face",
 
