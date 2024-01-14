@@ -1,9 +1,13 @@
 name = "me"
 main = "./.output/server/index.mjs"
-compatibility_date = "2022-09-10"
+compatibility_date = "2023-12-01"
 
 workers_dev = true
 route = { pattern = "borabuyukbas.com.tr/*", zone_name = "borabuyukbas.com.tr" }
+
+rules = [
+  { type = "ESModule", globs = ["**/*.js", "**/*.mjs"]},
+]
 
 [site]
 bucket = ".output/public"

@@ -24,7 +24,7 @@ jobs:
         node: [ 18 ]
 
     steps:
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node }}
 
@@ -47,6 +47,6 @@ jobs:
           NITRO_PRESET: cloudflare
 
       - name: Publish to Cloudflare
-        uses: cloudflare/wrangler-action@2.0.0
+        uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
