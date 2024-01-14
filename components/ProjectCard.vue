@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Platforms, Project } from '~/server/api/projects';
+import type { Platforms, Project } from '~/pages/projects.vue';
 
 defineProps<{
   project: Project,
