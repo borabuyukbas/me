@@ -32,8 +32,8 @@ const languageColors: Record<string, string> = {
   "Scala": "#c22d40",
   "Shell": "#89e051",
   "Svelte": "#ff3e00",
-  
   "TypeScript": "#3178c6",
+  "Vue": "#41b883",
 }
 
 </script>
