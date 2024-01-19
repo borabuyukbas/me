@@ -15,21 +15,9 @@ export interface Project {
 }
 
 const [{ data: githubResponse }, { data: gitlabResponse }, { data: huggingfaceResponse }] = await Promise.all([
-  useFetch<Record<string, string>[]>("https://api.github.com/users/borabuyukbas/repos", {
-    getCachedData(key) {
-      return nuxtApp.payload.data[key] || nuxtApp.static.data[key]
-    }
-  }),
-  useFetch<Record<string, string>[]>("https://gitlab.com/api/v4/users/3331811/projects", {
-    getCachedData(key) {
-      return nuxtApp.payload.data[key] || nuxtApp.static.data[key]
-    }
-  }),
-  useFetch<Record<string, string>[]>("https://huggingface.co/api/models?author=borabuyukbas", {
-    getCachedData(key) {
-      return nuxtApp.payload.data[key] || nuxtApp.static.data[key]
-    }
-  }),
+  useFetch<Record<string, string>[]>("https://api.github.com/users/borabuyukbas/repos"),
+  useFetch<Record<string, string>[]>("https://gitlab.com/api/v4/users/3331811/projects"),
+  useFetch<Record<string, string>[]>("https://huggingface.co/api/models?author=borabuyukbas"),
 ]);
 
 
