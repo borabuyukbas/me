@@ -1,6 +1,4 @@
 <script setup lang="ts">
-const nuxtApp = useNuxtApp();
-
 export type Platforms = "GitHub" | "GitLab" | "Hugging Face"
 
 export interface Project {
