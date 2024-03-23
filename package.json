@@ -26,5 +26,8 @@
     "eslint-plugin-vue": "^9.4.0",
     "nuxt": "^3.11.1",
     "typescript": "^5.3.3"
+  },
+  "resolutions": {
+    "string-width": "^4.2.3"
   }
 }
